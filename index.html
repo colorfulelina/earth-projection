@@ -25,6 +25,32 @@
             display: none;
         }
 
+        #yay-screen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #yay-screen iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #yay-screen h1 {
+            position: relative;
+            color: white;
+            font-size: 4rem;
+            z-index: 1;
+        }
+
         button {
             margin: 10px;
             padding: 10px 20px;
@@ -60,12 +86,19 @@
         <button id="no-button">No</button>
     </div>
 
+    <div id="yay-screen">
+        <iframe src="https://www.youtube.com/embed/Xa-FQ3yAoOo?autoplay=1&mute=1&loop=1&playlist=Xa-FQ3yAoOo" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <h1>Yay!</h1>
+    </div>
+
     <script>
         const submitButton = document.getElementById('submit-name');
         const nameInput = document.getElementById('name');
         const formContainer = document.getElementById('form-container');
         const mainContent = document.getElementById('main-content');
         const noButton = document.getElementById('no-button');
+        const yesButton = document.getElementById('yes-button');
+        const yayScreen = document.getElementById('yay-screen');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
@@ -83,7 +116,14 @@
             noButton.style.left = `${x}px`;
             noButton.style.top = `${y}px`;
         });
+
+        yesButton.addEventListener('click', () => {
+            mainContent.style.display = 'none';
+            yayScreen.style.display = 'flex';
+            yayScreen.style.flexDirection = 'column';
+            yayScreen.style.alignItems = 'center';
+            yayScreen.style.justifyContent = 'center';
+        });
     </script>
 </body>
 </html>
-
