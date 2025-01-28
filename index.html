@@ -3,39 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Video Background</title>
+    <title>Valentine's Day Special</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
             margin: 0;
-            overflow: hidden;
-            height: 100vh;
         }
-        .background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
+
+        #form-container {
             text-align: center;
-            font-size: 2rem;
-            margin-top: 40vh;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        #main-content {
+            text-align: center;
+            display: none;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes-button {
+            background-color: #ffb6c1;
+            color: white;
+        }
+
+        #no-button {
+            background-color: #ffcccb;
+            color: white;
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <video class="background-video" autoplay loop muted>
-        <source src="world.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="content">
+    <div id="form-container">
+        <h1>Welcome to the Valentine's Day Surprise!</h1>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" placeholder="Your name here">
+        <button id="submit-name">Submit</button>
     </div>
+
+    <div id="main-content">
+        <h2>Will you be my Valentine?</h2>
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById('submit-name');
+        const nameInput = document.getElementById('name');
+        const formContainer = document.getElementById('form-container');
+        const mainContent = document.getElementById('main-content');
+        const noButton = document.getElementById('no-button');
+
+        submitButton.addEventListener('click', () => {
+            const name = nameInput.value.trim().toLowerCase();
+            if (name === 'ryan') {
+                formContainer.style.display = 'none';
+                mainContent.style.display = 'block';
+            } else {
+                alert("Sorry, this surprise isn't for you!");
+            }
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
 </body>
 </html>
+
