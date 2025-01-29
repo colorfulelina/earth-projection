@@ -33,6 +33,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background-color: #ffe4e1; /* Fix: Keeps the pink background */
         }
 
         #yay-screen iframe {
@@ -44,10 +45,10 @@
             z-index: -1;
         }
 
-        #yay-screen h1 {
+        #yay-screen h3 {
             position: relative;
             color: white;
-            font-size: 4rem;
+            font-size: 2rem;
             z-index: 1;
         }
 
@@ -75,7 +76,11 @@
 <body>
     <div id="form-container">
         <!-- Local GIF instead of Giphy -->
-        <div class="tenor-gif-embed" data-postid="8604663346218614199" data-share-method="host" data-aspect-ratio="1.23333" data-width="100%"><a href="https://tenor.com/view/milk-and-mocha-milk-and-mocha-bear-gif-8604663346218614199">Milk And Mocha Milk And Mocha Bear Sticker</a>from <a href="https://tenor.com/search/milk+and+mocha-stickers">Milk And Mocha Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <div class="tenor-gif-embed" data-postid="8604663346218614199" data-share-method="host" data-aspect-ratio="1.23333" data-width="100%">
+            <a href="https://tenor.com/view/milk-and-mocha-milk-and-mocha-bear-gif-8604663346218614199">Milk And Mocha Milk And Mocha Bear Sticker</a> from 
+            <a href="https://tenor.com/search/milk+and+mocha-stickers">Milk And Mocha Stickers</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         
         <h1>hi</h1>
         <label for="name">Enter your name:</label>
@@ -84,9 +89,7 @@
     </div>
 
     <div id="main-content">
-        <h2>Are you nice?
-</h2>
-        
+        <h2>Are you nice?</h2>
         <button id="yes-button">Yes</button>
         <button id="no-button">No</button>
     </div>
@@ -132,3 +135,4 @@
     </script>
 </body>
 </html>
+
