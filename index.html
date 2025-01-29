@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             position: relative;
-            transition: background-color 1s ease; /* Add smooth transition */
+            transition: background-color 1s ease;
         }
 
         #form-container {
@@ -122,18 +122,36 @@
             width: 80%;
             margin: auto;
             border-radius: 10px;
-            background-color: #FFB6C1; /* Set Thistle color */
+            background-color: #FFB6C1;
         }
 
         #next-button {
             margin-top: 20px;
-            background-color: #D8BFD8; /* Thistle color */
+            background-color: #D8BFD8;
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
             font-size: 16px;
         }
 
+        #red-screen {
+            display: none;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        #no-fattie-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -168,6 +186,12 @@
         <h1>bis zum mond und zurück. will dein ass. </h1>
     </div>
 
+    <div id="red-screen">
+        <h1>no fattie</h1>
+        <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"></div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
     <button id="back-button" style="display: none;" onclick="goBack()">Back</button>
 
     <script>
@@ -177,9 +201,9 @@
         const mainContent = document.getElementById('main-content');
         const letterPage = document.getElementById('letter-page');
         const yayScreen = document.getElementById('yay-screen');
-        const nextButton = document.getElementById('next-button');
+        const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
-
+        
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
@@ -189,37 +213,16 @@
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; 
-
-                // Create the embedded GIF dynamically
-                const gifContainer = document.createElement('div');
-                gifContainer.classList.add('tenor-gif-embed');
-                gifContainer.setAttribute('data-postid', '13418513');
-                gifContainer.setAttribute('data-share-method', 'host');
-                gifContainer.setAttribute('data-aspect-ratio', '1.5');
-                gifContainer.setAttribute('data-width', '100%');
-                
-                const gifLink = document.createElement('a');
-                gifLink.setAttribute('href', 'https://tenor.com/view/milk-and-mocha-bears-fart-gif-13418513');
-                gifLink.textContent = 'Milk And Mocha Bears GIF';
-                gifContainer.appendChild(gifLink);
-                
-                document.body.appendChild(gifContainer);
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://tenor.com/embed.js';
-                document.body.appendChild(script);
-
-                const noFattiesText = document.createElement('h1');
-                noFattiesText.textContent = 'no fattie';
-                document.body.appendChild(noFattiesText);
-                
-                backButton.style.display = 'block';
+                redScreen.style.display = 'block'; // Show the red screen
+                backButton.style.display = 'block'; // Show the back button
             }
         });
 
-        nextButton.addEventListener('click', () => {
-            letterPage.style.display = 'none'; 
-            yayScreen.style.display = 'flex'; 
+        backButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = '#ffe4e1';
+            formContainer.style.display = 'block'; // Show the form again
+            redScreen.style.display = 'none'; // Hide the red screen
+            backButton.style.display = 'none'; // Hide the back button
         });
 
         function goBack() {
