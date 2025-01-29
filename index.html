@@ -16,6 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             position: relative;
+            transition: background-color 0.5s ease;
         }
 
         #form-container {
@@ -68,12 +69,12 @@
             position: relative;
             color: white;
             font-size: 4rem;
-            font-family: 'Poppins', sans-serif; /* Poppins font for German text */
+            font-family: 'Poppins', sans-serif;
             z-index: 1;
         }
 
         h2 {
-            font-family: 'Playfair Display', serif; /* Playfair Display font for 'Are you nice?' */
+            font-family: 'Playfair Display', serif;
         }
 
         button {
@@ -140,7 +141,7 @@
                 formContainer.style.display = 'none';
                 mainContent.style.display = 'block';
             } else {
-                alert("Sorry, this surprise isn't for you!");
+                document.body.style.backgroundColor = 'red';
             }
         });
 
@@ -161,4 +162,5 @@
     </script>
 </body>
 </html>
+
 
