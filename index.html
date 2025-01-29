@@ -114,6 +114,26 @@
             background-color: lightgray;
         }
 
+        #letter-page {
+            display: none;
+            background-color: #D8B7DD; /* Light purple */
+            padding: 20px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        #next-button {
+            margin-top: 20px;
+            background-color: #D8B7DD;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
     </style>
 </head>
 <body>
@@ -127,6 +147,11 @@
         <label for="name">Enter your name here:</label>
         <input type="text" id="name" placeholder="Your name here">
         <button id="submit-name">Submit</button>
+    </div>
+
+    <div id="letter-page">
+        <h1>Here's a secret message!</h1>
+        <button id="next-button">Next</button>
     </div>
 
     <div id="main-content">
@@ -151,16 +176,16 @@
         const nameInput = document.getElementById('name');
         const formContainer = document.getElementById('form-container');
         const mainContent = document.getElementById('main-content');
-        const noButton = document.getElementById('no-button');
-        const yesButton = document.getElementById('yes-button');
+        const letterPage = document.getElementById('letter-page');
         const yayScreen = document.getElementById('yay-screen');
+        const nextButton = document.getElementById('next-button');
         const backButton = document.getElementById('back-button');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
-                mainContent.style.display = 'block';
+                letterPage.style.display = 'block'; // Show the letter page
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; // Hide the form, buttons, and GIFs
@@ -168,19 +193,9 @@
             }
         });
 
-        noButton.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
-        });
-
-        yesButton.addEventListener('click', () => {
-            mainContent.style.display = 'none';
-            yayScreen.style.display = 'flex';
-            yayScreen.style.flexDirection = 'column';
-            yayScreen.style.alignItems = 'center';
-            yayScreen.style.justifyContent = 'center';
+        nextButton.addEventListener('click', () => {
+            letterPage.style.display = 'none'; // Hide the letter page
+            yayScreen.style.display = 'flex'; // Show the yay screen
         });
 
         function goBack() {
@@ -192,6 +207,7 @@
     </script>
 </body>
 </html>
+
 
 
 
