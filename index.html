@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             position: relative;
-            transition: background-color 0.5s ease;
+            transition: background-color 1s ease; /* Add smooth transition */
         }
 
         #form-container {
@@ -116,18 +116,18 @@
 
         #letter-page {
             display: none;
-            background-color: #D8B7DD; /* Light purple */
             padding: 20px;
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
             width: 80%;
             margin: auto;
             border-radius: 10px;
+            background-color: #D8BFD8; /* Set Thistle color */
         }
 
         #next-button {
             margin-top: 20px;
-            background-color: #D8B7DD;
+            background-color: #D8BFD8; /* Thistle color */
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
@@ -185,6 +185,7 @@
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
+                document.body.style.backgroundColor = '#D8BFD8'; // Change the background to Thistle
                 letterPage.style.display = 'block'; // Show the letter page
             } else {
                 document.body.style.backgroundColor = 'red';
@@ -207,7 +208,5 @@
     </script>
 </body>
 </html>
-
-
 
 
