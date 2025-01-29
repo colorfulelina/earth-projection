@@ -156,8 +156,7 @@
 
     <div id="main-content">
         <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
-        <h2>Are you nice?
-        ich hab mich in deinen augen verloren</h2>
+        <h2>Are you nice? ich hab mich in deinen augen verloren</h2>
         <button id="yes-button">Yes</button>
         <button id="no-button">No</button>
     </div>
@@ -190,9 +189,31 @@
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; 
-                <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"><a href="https://tenor.com/view/milk-and-mocha-bears-fart-gif-13418513">Milk And Mocha Bears GIF</a>from <a href="https://tenor.com/search/milk+and+mocha-gifs">Milk And Mocha GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-                <h1> no fattie </h1>
-                backButton.style.display = 'block'; 
+
+                // Create the embedded GIF dynamically
+                const gifContainer = document.createElement('div');
+                gifContainer.classList.add('tenor-gif-embed');
+                gifContainer.setAttribute('data-postid', '13418513');
+                gifContainer.setAttribute('data-share-method', 'host');
+                gifContainer.setAttribute('data-aspect-ratio', '1.5');
+                gifContainer.setAttribute('data-width', '100%');
+                
+                const gifLink = document.createElement('a');
+                gifLink.setAttribute('href', 'https://tenor.com/view/milk-and-mocha-bears-fart-gif-13418513');
+                gifLink.textContent = 'Milk And Mocha Bears GIF';
+                gifContainer.appendChild(gifLink);
+                
+                document.body.appendChild(gifContainer);
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://tenor.com/embed.js';
+                document.body.appendChild(script);
+
+                const noFattiesText = document.createElement('h1');
+                noFattiesText.textContent = 'no fattie';
+                document.body.appendChild(noFattiesText);
+                
+                backButton.style.display = 'block';
             }
         });
 
