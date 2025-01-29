@@ -20,45 +20,36 @@
             text-align: center;
         }
 
-        /* Apply Courier font to the name input field and button */
-        #form-container label,
-        #form-container input,
-        #form-container button {
-            font-family: "Courier New", Courier, monospace;
-        }
-
         #main-content {
             text-align: center;
             display: none;
         }
 
-        <style>
-    #yay-screen {
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        background-color: transparent; /* Set background to transparent */
-        z-index: 1; /* Ensure it’s above everything else */
-    }
+        #yay-screen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-    #yay-screen iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0; /* Ensure the iframe stays at the bottom */
-    }
+        #yay-screen iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
 
-    /* Hide the h1 text */
-    #yay-screen h1 {
-        display: none;
-    }
-</style>
+        #yay-screen h1 {
+            position: relative;
+            color: white;
+            font-size: 4rem;
+            z-index: 1;
+        }
 
         button {
             margin: 10px;
@@ -83,8 +74,7 @@
 </head>
 <body>
     <div id="form-container">
-        <div class="tenor-gif-embed" data-postid="7355347396987361923" data-share-method="host" data-aspect-ratio="1.23333" data-width="100%"><a href="https://tenor.com/view/mocha-bear-hearts-mocha-and-milk-bears-milk-mocha-bear-gif-love-gif-7355347396987361923">Mocha Bear Hearts Sticker</a>from <a href="https://tenor.com/search/mocha+bear-stickers">Mocha Bear Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute animated illustration">
         <h1>hi</h1>
         <label for="name">Enter your name:</label>
         <input type="text" id="name" placeholder="Your name here">
@@ -99,8 +89,7 @@
 
     <div id="yay-screen">
         <iframe src="https://www.youtube.com/embed/Xa-FQ3yAoOo?autoplay=1&mute=1&loop=1&playlist=Xa-FQ3yAoOo" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
-        <!-- Changed from h3 to h1 -->
-        <h1>Ich mag dich bis zum Mond und zurück</h1>
+        <h1>Yay!</h1>
     </div>
 
     <script>
@@ -139,5 +128,4 @@
     </script>
 </body>
 </html>
-
 
