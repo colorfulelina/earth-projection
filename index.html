@@ -14,13 +14,29 @@
             background-color: #ffe4e1;
             font-family: Arial, sans-serif;
             margin: 0;
-            position: relative;
+            position: relative; /* Positioning container for absolute elements */
         }
 
         #form-container {
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
-            position: relative;
+            position: relative; /* Add relative positioning for sticker */
+        }
+
+        #form-container img.sticker-left,
+        #form-container img.sticker-right {
+            position: absolute;
+            bottom: 10px;
+            width: 100px; /* Adjust the size of the sticker */
+            height: auto;
+        }
+
+        #form-container img.sticker-left {
+            left: -100px; /* Move further to the left */
+        }
+
+        #form-container img.sticker-right {
+            right: -100px; /* Move further to the right */
         }
 
         #main-content {
@@ -73,30 +89,14 @@
             color: white;
             position: absolute;
         }
-
-        /* New styles for "No Fatty" screen (commented out) */
-        <!-- 
-        #no-fatty-screen {
-            display: none;
-            background-color: lightgreen;
-            color: white;
-            text-align: center;
-            font-size: 3rem;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        -->
     </style>
 </head>
 <body>
     <div id="form-container">
+        <!-- Sticker images added here -->
+        <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
+        <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
+        
         <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3pzeGZzNjh5em1qdXlieWxvbXZ3Mjh3amVrcDF3bzNuc3NlNHU4bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/JRsQiAN79bPWUv43Ko/giphy.gif" alt="Cute animated illustration">
         <h1>hi</h1>
         
@@ -106,8 +106,7 @@
     </div>
 
     <div id="main-content">
-        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3pzeGZzNjh5em1qdXlieWxvbXZ3Mjh3amVrcDF3bzNuc3NlNHU4bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/JRsQiAN79bPWUv43Ko/giphy.gif" alt="Cute animated illustration">
-        <h1>hi</h1>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
         <h2>Are you nice?</h2>
         <button id="yes-button">Yes</button>
         <button id="no-button">No</button>
@@ -119,12 +118,6 @@
         <h1>Ich mag dich bis zum Mond und zurück</h1>
     </div>
 
-    <!-- Commented out No Fatty screen
-    <div id="no-fatty-screen">
-        <p>No Fatty</p>
-    </div>
-    -->
-
     <script>
         const submitButton = document.getElementById('submit-name');
         const nameInput = document.getElementById('name');
@@ -133,7 +126,6 @@
         const noButton = document.getElementById('no-button');
         const yesButton = document.getElementById('yes-button');
         const yayScreen = document.getElementById('yay-screen');
-        //const noFattyScreen = document.getElementById('no-fatty-screen');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
@@ -141,8 +133,7 @@
                 formContainer.style.display = 'none';
                 mainContent.style.display = 'block';
             } else {
-                formContainer.style.display = 'none';
-                //noFattyScreen.style.display = 'flex';  // Show "No Fatty" screen after name evaluation
+                alert("Sorry, this surprise isn't for you!");
             }
         });
 
