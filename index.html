@@ -111,7 +111,7 @@
         }
 
         #back-button:hover {
-            background-color: lightgray;
+            background-color: lightpink;
         }
 
         #letter-page {
@@ -189,18 +189,19 @@
                 letterPage.style.display = 'block'; // Show the letter page
             } else {
                 document.body.style.backgroundColor = 'red';
-                formContainer.style.display = 'none'; // Hide the form, buttons, and GIFs
-                backButton.style.display = 'block'; // Show the back button
+                formContainer.style.display = 'none'; 
+                <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"><a href="https://tenor.com/view/milk-and-mocha-bears-fart-gif-13418513">Milk And Mocha Bears GIF</a>from <a href="https://tenor.com/search/milk+and+mocha-gifs">Milk And Mocha GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                <h1> no fattie </h1>
+                backButton.style.display = 'block'; 
             }
         });
 
         nextButton.addEventListener('click', () => {
-            letterPage.style.display = 'none'; // Hide the letter page
-            yayScreen.style.display = 'flex'; // Show the yay screen
+            letterPage.style.display = 'none'; 
+            yayScreen.style.display = 'flex'; 
         });
 
         function goBack() {
-            // Reset the background and show the form again
             document.body.style.backgroundColor = '#ffe4e1';
             backButton.style.display = 'none'; // Hide the back button again
             formContainer.style.display = 'block'; // Show the form
