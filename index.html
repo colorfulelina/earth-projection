@@ -74,24 +74,25 @@
             position: absolute;
         }
 
-#no-fatty-screen {
-    display: none; /* Start with this hidden */
-    background-color: lightgreen;
-    color: white;
-    text-align: center;
-    font-size: 3rem;
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+        /* New styles for "No Fatty" screen (commented out) */
+        <!-- 
+        #no-fatty-screen {
+            display: none;
+            background-color: lightgreen;
+            color: white;
+            text-align: center;
+            font-size: 3rem;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        -->
     </style>
 </head>
 <body>
@@ -118,10 +119,11 @@
         <h1>Ich mag dich bis zum Mond und zurück</h1>
     </div>
 
-    <!-- "No Fatty" Screen -->
+    <!-- Commented out No Fatty screen
     <div id="no-fatty-screen">
         <p>No Fatty</p>
     </div>
+    -->
 
     <script>
         const submitButton = document.getElementById('submit-name');
@@ -131,7 +133,7 @@
         const noButton = document.getElementById('no-button');
         const yesButton = document.getElementById('yes-button');
         const yayScreen = document.getElementById('yay-screen');
-        const noFattyScreen = document.getElementById('no-fatty-screen');
+        //const noFattyScreen = document.getElementById('no-fatty-screen');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
@@ -140,7 +142,7 @@
                 mainContent.style.display = 'block';
             } else {
                 formContainer.style.display = 'none';
-                noFattyScreen.style.display = 'flex';  // Show "No Fatty" screen after name evaluation
+                //noFattyScreen.style.display = 'flex';  // Show "No Fatty" screen after name evaluation
             }
         });
 
@@ -161,3 +163,4 @@
     </script>
 </body>
 </html>
+
