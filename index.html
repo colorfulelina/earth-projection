@@ -46,10 +46,6 @@
             display: none;
         }
 
-        #main-content img {
-            display: none; /* Hides GIFs in the main content */
-        }
-
         #yay-screen {
             display: none;
             position: absolute;
@@ -100,13 +96,6 @@
             color: white;
             position: absolute;
         }
-
-        #error-message {
-            display: none;
-            text-align: center;
-            color: white;
-            font-size: 2rem;
-        }
     </style>
 </head>
 <body>
@@ -123,6 +112,7 @@
     </div>
 
     <div id="main-content">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
         <h2>Are you nice?
         ich hab mich in deinen augen verloren</h2>
         <button id="yes-button">Yes</button>
@@ -136,14 +126,6 @@
         <h1>bis zum mond und zurück. will dein ass. </h1>
     </div>
 
-    <div id="error-message">
-        <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%">
-            <a href="https://tenor.com/view/milk-and-mocha-bears-fart-gif-13418513">Milk And Mocha Bears GIF</a>
-        </div>
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <h1> no fatty </h1>
-    </div>
-
     <script>
         const submitButton = document.getElementById('submit-name');
         const nameInput = document.getElementById('name');
@@ -152,22 +134,15 @@
         const noButton = document.getElementById('no-button');
         const yesButton = document.getElementById('yes-button');
         const yayScreen = document.getElementById('yay-screen');
-        const errorMessage = document.getElementById('error-message');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
-                document.body.style.backgroundColor = '#ff99aa'; // Darker pink
                 formContainer.style.display = 'none';
                 mainContent.style.display = 'block';
-
-                // Hide any GIFs inside main-content
-                const gifs = mainContent.querySelectorAll("img");
-                gifs.forEach(gif => gif.style.display = "none");
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; // Hide the form, buttons, and GIFs
-                errorMessage.style.display = 'block'; // Show error message and GIF
             }
         });
 
@@ -188,4 +163,5 @@
     </script>
 </body>
 </html>
+
 
