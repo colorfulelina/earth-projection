@@ -196,9 +196,15 @@
         });
 
         nextButton.addEventListener('click', () => {
-            letterPage.style.display = 'none'; // Hide the letter page
-            yayScreen.style.display = 'flex'; // Show the yay screen
-        });
+    letterPage.style.display = 'none'; // Hide the letter page
+    yayScreen.style.display = 'flex'; // Show the yay screen
+    
+    // Play the background music
+    const backgroundMusic = document.getElementById('background-music');
+    backgroundMusic.play();
+});
+
+        
 
         function goBack() {
             // Reset the background and show the form again
