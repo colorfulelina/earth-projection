@@ -111,7 +111,7 @@
         }
 
         #back-button:hover {
-            background-color: lightgray;
+            background-color: lightpink;
         }
 
         #letter-page {
@@ -123,32 +123,39 @@
             margin: auto;
             border-radius: 10px;
             background-color: #FFB6C1;
-            position: relative;
         }
 
-        #letter-page iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        #next-button {
+        #open-button {
             margin-top: 20px;
-            background-color: #FFB6C1;
+            background-color: #D8BFD8;
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
             font-size: 16px;
-            position: relative;
-            z-index: 1; /* Ensure it is on top of the video */
         }
 
+        #red-screen {
+            display: none;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        #no-fattie-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+    <audio id="background-music" src="deftones.mp3"></audio>
     <div id="form-container">
         <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
         <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
@@ -162,24 +169,29 @@
     </div>
 
     <div id="letter-page">
-        <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExazEzb2xrZm52b3NmbmR1aTYwbmRuODR3c2swMzF6bWF1bXQyOXhuYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g3z4awKRKdD2lEMQaY/giphy.gif" alt="Cute animated illustration">
         <h1>Here's a secret message!</h1>
-        <button id="next-button">Next</button>
+        <button id="open-button">Open</button>
     </div>
 
     <div id="main-content">
         <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
-        <h2>Are you nice?
-        ich hab mich in deinen augen verloren</h2>
+        <h2>Are you nice? ich hab mich in deinen augen verloren</h2>
         <button id="yes-button">Yes</button>
         <button id="no-button">No</button>
     </div>
 
     <div id="yay-screen">
-        <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Xa-FQ3yAoOo?autoplay=1&mute=1&loop=1&playlist=Xa-FQ3yAoOo" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
         <h1>ich mag dich so sehr </h1>
         <h1>bis zum mond und zurück. will dein ass. </h1>
+    </div>
+
+    <div id="red-screen">
+        <h1>no fattie</h1>
+        <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"></div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
 
     <button id="back-button" style="display: none;" onclick="goBack()">Back</button>
@@ -191,31 +203,34 @@
         const mainContent = document.getElementById('main-content');
         const letterPage = document.getElementById('letter-page');
         const yayScreen = document.getElementById('yay-screen');
-        const nextButton = document.getElementById('next-button');
+        const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
-
+        
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
-                document.body.style.backgroundColor = '#D8BFD8'; 
-                letterPage.style.display = 'block'; 
+                document.body.style.backgroundColor = '#D8BFD8'; // Change the background to Thistle
+                letterPage.style.display = 'block'; // Show the letter page
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; 
-                backButton.style.display = 'block'; 
+                redScreen.style.display = 'block'; // Show the red screen
+                backButton.style.display = 'block'; // Show the back button
             }
         });
 
-        nextButton.addEventListener('click', () => {
-            letterPage.style.display = 'none'; 
-            yayScreen.style.display = 'flex'; 
+        backButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = '#ffe4e1';
+            formContainer.style.display = 'block'; // Show the form again
+            redScreen.style.display = 'none'; // Hide the red screen
+            backButton.style.display = 'none'; // Hide the back button
         });
 
         function goBack() {
             document.body.style.backgroundColor = '#ffe4e1';
-            backButton.style.display = 'none'; 
-            formContainer.style.display = 'block'; 
+            backButton.style.display = 'none'; // Hide the back button again
+            formContainer.style.display = 'block'; // Show the form
         }
     </script>
 </body>
