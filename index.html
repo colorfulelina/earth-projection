@@ -16,7 +16,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             position: relative;
-            transition: background-color 1s ease; /* Add smooth transition */
+            transition: background-color 1s ease;
         }
 
         #form-container {
@@ -122,16 +122,28 @@
             width: 80%;
             margin: auto;
             border-radius: 10px;
-            background-color: #FFB6C1; /* Set Thistle color */
+            background-color: #FFB6C1;
+            position: relative;
+        }
+
+        #letter-page iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
         #next-button {
             margin-top: 20px;
-            background-color: #FFB6C1; /* Thistle color */
+            background-color: #FFB6C1;
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
             font-size: 16px;
+            position: relative;
+            z-index: 1; /* Ensure it is on top of the video */
         }
 
     </style>
@@ -150,7 +162,7 @@
     </div>
 
     <div id="letter-page">
-         <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&mute=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <h1>Here's a secret message!</h1>
         <button id="next-button">Next</button>
     </div>
@@ -164,7 +176,7 @@
     </div>
 
     <div id="yay-screen">
-        <iframe src="https://www.youtube.com/embed/Xa-FQ3yAoOo?autoplay=1&mute=1&loop=1&playlist=Xa-FQ3yAoOo" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
         <h1>ich mag dich so sehr </h1>
         <h1>bis zum mond und zurück. will dein ass. </h1>
@@ -186,29 +198,27 @@
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
-                document.body.style.backgroundColor = '#D8BFD8'; // Change the background to Thistle
-                letterPage.style.display = 'block'; // Show the letter page
+                document.body.style.backgroundColor = '#D8BFD8'; 
+                letterPage.style.display = 'block'; 
             } else {
                 document.body.style.backgroundColor = 'red';
-                formContainer.style.display = 'none'; // Hide the form, buttons, and GIFs
-                backButton.style.display = 'block'; // Show the back button
+                formContainer.style.display = 'none'; 
+                backButton.style.display = 'block'; 
             }
         });
 
         nextButton.addEventListener('click', () => {
-    letterPage.style.display = 'none'; // Hide the letter page
-    yayScreen.style.display = 'flex'; // Show the yay screen
-    });
-
-        
+            letterPage.style.display = 'none'; 
+            yayScreen.style.display = 'flex'; 
+        });
 
         function goBack() {
-            // Reset the background and show the form again
             document.body.style.backgroundColor = '#ffe4e1';
-            backButton.style.display = 'none'; // Hide the back button again
-            formContainer.style.display = 'block'; // Show the form
+            backButton.style.display = 'none'; 
+            formContainer.style.display = 'block'; 
         }
     </script>
 </body>
 </html>
+
 
