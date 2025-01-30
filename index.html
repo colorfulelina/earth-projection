@@ -137,7 +137,6 @@
     </style>
 </head>
 <body>
-    <audio id="background-music" src="deftones.mp3"></audio>
     <div id="form-container">
         <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
         <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
@@ -151,6 +150,7 @@
     </div>
 
     <div id="letter-page">
+         <iframe src="https://www.youtube.com/embed/b92EKemUA4A?autoplay=1&mute=1&loop=1&playlist=b92EKemUA4A" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <h1>Here's a secret message!</h1>
         <button id="next-button">Next</button>
     </div>
@@ -198,11 +198,7 @@
         nextButton.addEventListener('click', () => {
     letterPage.style.display = 'none'; // Hide the letter page
     yayScreen.style.display = 'flex'; // Show the yay screen
-    
-    // Play the background music
-    const backgroundMusic = document.getElementById('background-music');
-    backgroundMusic.play();
-});
+    });
 
         
 
