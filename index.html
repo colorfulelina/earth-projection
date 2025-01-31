@@ -200,6 +200,7 @@
         const nameInput = document.getElementById('name');
         const formContainer = document.getElementById('form-container');
         const mainContent = document.getElementById('main-content');
+        const yesButton = documrnt.getElementById('letter-page');
         const letterPage = document.getElementById('letter-page');
         const yayScreen = document.getElementById('yay-screen');
         const redScreen = document.getElementById('red-screen');
@@ -211,18 +212,18 @@
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
                 document.body.style.backgroundColor = '#D8BFD8'; 
-                letterPage.style.display = 'block'; // Show the letter page
+                letterPage.style.display = 'block'; 
             } else {
                 document.body.style.backgroundColor = 'red';
                 formContainer.style.display = 'none'; 
-                redScreen.style.display = 'block'; // Show the red screen
-                backButton.style.display = 'block'; // Show the back button
+                redScreen.style.display = 'block'; 
+                backButton.style.display = 'block'; 
             }
         });
 
-        nextButton.addEventListener('click', () => { // Event listener for the Next button
-            letterPage.style.display = 'none'; // Hide the letter page
-            yayScreen.style.display = 'block'; // Show the yay screen
+        nextButton.addEventListener('click', () => { 
+            letterPage.style.display = 'none';
+            yayScreen.style.display = 'block'; 
         });
 
         backButton.addEventListener('click', () => {
