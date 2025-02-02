@@ -183,14 +183,15 @@
             }
         });
 
-        yesButton.addEventListener('click', () => {
-            mainContent.style.display = 'none';
-            letterPage.style.display = 'block';
-        });
-
         nextButton.addEventListener('click', () => {
             letterPage.style.display = 'none';
             yayScreen.style.display = 'block';
+        });
+        backButton.addEventListener('click', () => {
+            document.body.style.backgroundColor = '#ffe4e1';
+            formContainer.style.display = 'block'; // Show the form again
+            redScreen.style.display = 'none'; // Hide the red screen
+            backButton.style.display = 'none'; // Hide the back button
         });
 
         noButton.addEventListener('mouseover', () => {
@@ -201,13 +202,11 @@
             noButton.style.left = `${randomX}px`;
             noButton.style.top = `${randomY}px`;
         });
-        backButton.addEventListener('click', () => {
-            document.body.style.backgroundColor = '#ffe4e1';
-            formContainer.style.display = 'block'; // Show the form again
-            redScreen.style.display = 'none'; // Hide the red screen
-            backButton.style.display = 'none'; // Hide the back button
+        
+        yesButton.addEventListener('click', () => {
+            mainContent.style.display = 'none';
+            letterPage.style.display = 'block';
         });
-
         function goBack() {
             document.body.style.backgroundColor = '#ffe4e1';
             backButton.style.display = 'none'; // Hide the back button again
