@@ -19,7 +19,7 @@
             transition: background-color 1s ease;
         }
 
-        #form-container, #main-content, #letter-page, #yay-screen {
+        #form-container, #main-content, #letter-page, #yay-screen, #red-screen {
             text-align: center;
             font-family: 'Courier New', Courier, monospace;
             width: 80%;
@@ -72,30 +72,62 @@
             height: 100%;
             border: none;
         }
+        #red-screen {
+            display: none;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        #back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: white;
+            color: red;
+            border-radius: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="form-container">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
         <h1>hi</h1>
-        <label for="name">Enter your name:</label>
+        
+        <label for="name">Enter your name here:</label>
         <input type="text" id="name" placeholder="Your name here">
-        <button id="submit-name">Submit</button>
-    </div>
+        <button id="submit-name">Submit</button> 
 
     <div id="main-content" style="display: none;">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
         <h2>Willst du mein Valentinstag sein?</h2>
         <button id="yes-button">Ja</button>
         <button id="no-button">Nein</button>
     </div>
 
-    <div id="letter-page" style="display: none;">
+    <div id="letter-page">
         <h1>Here's a secret message!</h1>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzRidzAxNzkzbGFoa2FlcGlqYm5zbm10dmd3N2l1NTVzd2M2Mzh2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g3z4awKRKdD2lEMQaY/giphy.gif" alt="Cute animated illustration">
         <button id="next-button">Open</button>
     </div>
 
     <div id="yay-screen">
-        <iframe src="https://youtu.be/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" allowfullscreen></iframe>
-        <h1>Ich mag dich so sehr!</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
+        <h1>ich mag dich so sehr </h1>
+        <h1>bis zum mond und zurück. will dein ass. </h1>
+    </div>
+        
+    <div id="red-screen">
+        <h1>No fattie</h1>
+        <button id="back-button">Back</button>
     </div>
 
     <script>
@@ -108,6 +140,8 @@
         const nextButton = document.getElementById('next-button');
         const yesButton = document.getElementById('yes-button');
         const noButton = document.getElementById('no-button');
+        const redScreen = document.getElementById('red-screen');
+        const backButton = document.getElementById('back-button');
 
         // Submit Name
         submitButton.addEventListener('click', () => {
@@ -115,6 +149,13 @@
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
                 mainContent.style.display = 'block';
+            } else {
+                // Fade to red screen
+                formContainer.style.display = 'none';
+                redScreen.style.display = 'block';
+                setTimeout(() => {
+                    redScreen.style.opacity = '1';
+                }, 100);
             }
         });
 
@@ -136,6 +177,11 @@
             const randomY = Math.random() * (window.innerHeight - 100);
             noButton.style.left = `${randomX}px`;
             noButton.style.top = `${randomY}px`;
+        });
+        backButton.addEventListener('click', () => {
+            redScreen.style.display = 'none';
+            redScreen.style.opacity = '0';
+            formContainer.style.display = 'block';
         });
     </script>
 </body>
