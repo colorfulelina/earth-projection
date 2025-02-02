@@ -120,10 +120,11 @@
     <div id="form-container">
         <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
         <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
-    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
+        
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
         <h1>hi</h1>
         
-         <label for="name">Enter your name here:</label>
+        <label for="name">Enter your name here:</label>
         <input type="text" id="name" placeholder="Your name here">
         <button id="submit-name">Submit</button>
     </div>
@@ -137,11 +138,15 @@
 
     <div id="letter-page">
         <h1>Here's a secret message!</h1>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzRidzAxNzkzbGFoa2FlcGlqYm5zbm10dmd3N2l1NTVzd2M2Mzh2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g3z4awKRKdD2lEMQaY/giphy.gif" alt="Cute animated illustration">
         <button id="next-button">Open</button>
     </div>
 
     <div id="yay-screen">
-        <h1>ich mag dich so sehr!</h1>
+        <iframe src="https://youtu.be/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
+        <h1>ich mag dich so sehr </h1>
+        <h1>bis zum mond und zurück. will dein ass. </h1>
     </div>
 
     <div id="red-screen">
@@ -188,12 +193,26 @@
             yayScreen.style.display = 'block';
         });
 
+        noButton.addEventListener('mouseover', () => {
+            const maxX = window.innerWidth - noButton.clientWidth;
+            const maxY = window.innerHeight - noButton.clientHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
         backButton.addEventListener('click', () => {
             document.body.style.backgroundColor = '#ffe4e1';
-            redScreen.style.display = 'none';
-            backButton.style.display = 'none';
-            formContainer.style.display = 'block';
+            formContainer.style.display = 'block'; // Show the form again
+            redScreen.style.display = 'none'; // Hide the red screen
+            backButton.style.display = 'none'; // Hide the back button
         });
+
+        function goBack() {
+            document.body.style.backgroundColor = '#ffe4e1';
+            backButton.style.display = 'none'; // Hide the back button again
+            formContainer.style.display = 'block'; // Show the form
+        }
     </script>
 </body>
 </html>
