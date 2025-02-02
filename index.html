@@ -6,7 +6,152 @@
     <title>Day Special</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Add all your existing CSS here */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            position: relative;
+            transition: background-color 1s ease;
+        }
+
+        #form-container {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+        }
+
+        #form-container img.sticker-left,
+        #form-container img.sticker-right {
+            position: absolute;
+            bottom: 10px;
+            width: 100px;
+            height: auto;
+        }
+
+        #form-container img.sticker-left {
+            left: -100px;
+        }
+
+        #form-container img.sticker-right {
+            right: -100px;
+        }
+
+        #main-content {
+            text-align: center;
+            display: none;
+        }
+
+        #yay-screen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #yay-screen iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #yay-screen h1 {
+            position: relative;
+            color: white;
+            font-size: 4rem;
+            font-family: 'Poppins', sans-serif;
+            z-index: 1;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #yes-button {
+            background-color: #ffb6c1;
+            color: white;
+        }
+
+        #no-button {
+            background-color: #ffcccb;
+            color: white;
+            position: absolute;
+        }
+
+        #back-button {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: red;
+            border: 2px solid white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        #back-button:hover {
+            background-color: lightpink;
+        }
+
+        #letter-page {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+            background-color: #FFB6C1;
+        }
+
+        #next-button {
+            margin-top: 20px;
+            background-color: #D8BFD8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        #red-screen {
+            display: none;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        #no-fattie-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +203,6 @@
         const yayScreen = document.getElementById('yay-screen');
         const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
-        const nextButton = document.getElementById('next-button'); // Added reference for next button
         
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
@@ -72,11 +216,6 @@
                 redScreen.style.display = 'block'; // Show the red screen
                 backButton.style.display = 'block'; // Show the back button
             }
-        });
-
-        nextButton.addEventListener('click', () => { // Event listener for the Next button
-            letterPage.style.display = 'none'; // Hide the letter page
-            yayScreen.style.display = 'block'; // Show the yay screen
         });
 
         backButton.addEventListener('click', () => {
@@ -94,5 +233,3 @@
     </script>
 </body>
 </html>
-
-
