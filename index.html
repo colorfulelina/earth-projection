@@ -19,64 +19,13 @@
             transition: background-color 1s ease;
         }
 
-        #form-container {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            position: relative;
-        }
-
-        #form-container img.sticker-left,
-        #form-container img.sticker-right {
-            position: absolute;
-            bottom: 10px;
-            width: 100px;
-            height: auto;
-        }
-
-        #form-container img.sticker-left {
-            left: -100px;
-        }
-
-        #form-container img.sticker-right {
-            right: -100px;
-        }
-
-        #main-content {
+        #form-container, #main-content, #letter-page, #yay-screen, #red-screen {
             text-align: center;
             display: none;
         }
 
-        #yay-screen {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        #yay-screen iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        #yay-screen h1 {
-            position: relative;
-            color: white;
-            font-size: 4rem;
-            font-family: 'Poppins', sans-serif;
-            z-index: 1;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-        }
-
+        #form-container { display: block; }
+        
         button {
             margin: 10px;
             padding: 10px 20px;
@@ -85,162 +34,99 @@
             border-radius: 10px;
             cursor: pointer;
         }
-
-        #yes-button {
+        
+        #yes-button, #next-button {
             background-color: #ffb6c1;
             color: white;
         }
-
-        #no-button {
-            background-color: #ffcccb;
-            color: white;
-            position: absolute;
-        }
-
+        
         #back-button {
             position: absolute;
             bottom: 10px;
             left: 10px;
-            padding: 10px 20px;
             background-color: white;
             color: red;
             border: 2px solid white;
             cursor: pointer;
             font-size: 16px;
             border-radius: 10px;
-        }
-
-        #back-button:hover {
-            background-color: lightpink;
-        }
-
-        #letter-page {
             display: none;
-            padding: 20px;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            width: 80%;
-            margin: auto;
-            border-radius: 10px;
-            background-color: #FFB6C1;
-        }
-
-        #next-button {
-            margin-top: 20px;
-            background-color: #D8BFD8;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 16px;
-        }
-
-        #red-screen {
-            display: none;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            background-color: red;
-            color: white;
-            padding: 20px;
-            width: 80%;
-            margin: auto;
-            border-radius: 10px;
-        }
-
-        #no-fattie-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div id="form-container">
-        <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
-        <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
-        
-        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
-        <h1>hi</h1>
-        
-        <label for="name">Enter your name here:</label>
+        <h1>Enter Your Name</h1>
         <input type="text" id="name" placeholder="Your name here">
         <button id="submit-name">Submit</button>
     </div>
 
+    <div id="main-content">
+        <h2>Are you nice?</h2>
+        <button id="yes-button">Yes</button>
+    </div>
+
     <div id="letter-page">
         <h1>Here's a secret message!</h1>
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzRidzAxNzkzbGFoa2FlcGlqYm5zbm10dmd3N2l1NTVzd2M2Mzh2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g3z4awKRKdD2lEMQaY/giphy.gif" alt="Cute animated illustration">
         <button id="next-button">Open</button>
     </div>
 
-    <div id="main-content">
-        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
-        <h2>Are you nice? ich hab mich in deinen augen verloren</h2>
-        <button id="yes-button">Yes</button>
-        <button id="no-button">No</button>
-    </div>
-
     <div id="yay-screen">
-        <iframe src="https://youtu.be/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
-        <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
-        <h1>ich mag dich so sehr </h1>
-        <h1>bis zum mond und zurück. will dein ass. </h1>
+        <h1>ich mag dich so sehr!</h1>
     </div>
 
     <div id="red-screen">
-        <h1>no fattie</h1>
-        <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"></div>
-        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>No access!</h1>
     </div>
 
-    <button id="back-button" style="display: none;" onclick="goBack()">Back</button>
+    <button id="back-button">Back</button>
 
     <script>
         const submitButton = document.getElementById('submit-name');
         const nameInput = document.getElementById('name');
         const formContainer = document.getElementById('form-container');
         const mainContent = document.getElementById('main-content');
-        const yesButton = documrnt.getElementById('letter-page');
+        const yesButton = document.getElementById('yes-button');
         const letterPage = document.getElementById('letter-page');
+        const nextButton = document.getElementById('next-button');
         const yayScreen = document.getElementById('yay-screen');
         const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
-        const nextButton = document.getElementById('next-button'); 
-        
+
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
+            formContainer.style.display = 'none';
+            
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
-                formContainer.style.display = 'none';
                 document.body.style.backgroundColor = '#D8BFD8'; 
-                letterPage.style.display = 'block'; 
+                mainContent.style.display = 'block';
             } else {
                 document.body.style.backgroundColor = 'red';
-                formContainer.style.display = 'none'; 
-                redScreen.style.display = 'block'; 
-                backButton.style.display = 'block'; 
+                redScreen.style.display = 'block';
+                backButton.style.display = 'block';
             }
         });
 
-        nextButton.addEventListener('click', () => { 
+        yesButton.addEventListener('click', () => {
+            mainContent.style.display = 'none';
+            letterPage.style.display = 'block';
+        });
+
+        nextButton.addEventListener('click', () => {
             letterPage.style.display = 'none';
-            yayScreen.style.display = 'block'; 
+            yayScreen.style.display = 'block';
         });
 
         backButton.addEventListener('click', () => {
             document.body.style.backgroundColor = '#ffe4e1';
-            formContainer.style.display = 'block'; // Show the form again
-            redScreen.style.display = 'none'; // Hide the red screen
-            backButton.style.display = 'none'; // Hide the back button
+            redScreen.style.display = 'none';
+            backButton.style.display = 'none';
+            formContainer.style.display = 'block';
         });
-
-        function goBack() {
-            document.body.style.backgroundColor = '#ffe4e1';
-            backButton.style.display = 'none'; // Hide the back button again
-            formContainer.style.display = 'block'; // Show the form
-        }
     </script>
 </body>
 </html>
+
 
 
 
