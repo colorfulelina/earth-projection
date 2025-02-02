@@ -143,7 +143,7 @@
     </div>
 
     <div id="yay-screen">
-        <iframe src="https://youtu.be/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Xa-FQ3yAoOo?autoplay=1&loop=1" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
         <h1>ich mag dich so sehr </h1>
         <h1>bis zum mond und zurück. will dein ass. </h1>
@@ -154,8 +154,6 @@
         <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.0" data-width="100%"></div>
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
-
-    <button id="back-button" style="display: none;" onclick="goBack()">Back</button>
 
     <script>
         const submitButton = document.getElementById('submit-name');
@@ -168,6 +166,7 @@
         const yayScreen = document.getElementById('yay-screen');
         const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
+        const noButton = document.getElementById('no-button');
 
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
