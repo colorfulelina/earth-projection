@@ -18,10 +18,66 @@
             position: relative;
             transition: background-color 1s ease;
         }
+        #form-container img.sticker-left,
+        #form-container img.sticker-right {
+            position: absolute;
+            bottom: 10px;
+            width: 100px;
+            height: auto;
+        }
 
-        #form-container, #main-content, #letter-page, #yay-screen, #red-screen {
+        #form-container img.sticker-left {
+            left: -100px;
+        }
+
+        #form-container img.sticker-right {
+            right: -100px;
+        }
+
+        #form-container, #main-content, #letter-page {
             text-align: center;
             display: none;
+        }
+        #red-screen {
+            display: none;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: red;
+            color: white;
+            padding: 20px;
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+        #no-fattie-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
+         #yay-screen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #yay-screen iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        #yay-screen h1 {
+            position: relative;
+            color: white;
+            font-size: 4rem;
+            font-family: 'Poppins', sans-serif;
+            z-index: 1;
         }
 
         #form-container { display: block; }
@@ -38,6 +94,12 @@
         #yes-button, #next-button {
             background-color: #ffb6c1;
             color: white;
+        }
+
+        #no-button {
+            background-color: #ffcccb;
+            color: white;
+            position: absolute;
         }
         
         #back-button {
@@ -56,14 +118,21 @@
 </head>
 <body>
     <div id="form-container">
-        <h1>Enter Your Name</h1>
+        <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
+        <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
+        <h1>hi</h1>
+        
+         <label for="name">Enter your name here:</label>
         <input type="text" id="name" placeholder="Your name here">
         <button id="submit-name">Submit</button>
     </div>
 
     <div id="main-content">
-        <h2>Are you nice?</h2>
+        <h2>Ich hab mich in deinen augen verloren?</h2>
         <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+        
     </div>
 
     <div id="letter-page">
@@ -76,10 +145,12 @@
     </div>
 
     <div id="red-screen">
-        <h1>No access!</h1>
+        <h1>no fattie</h1>
+        <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"></div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
 
-    <button id="back-button">Back</button>
+    <button id="back-button" style="display: none;" onclick="goBack()">Back</button><button id="back-button">Back</button>
 
     <script>
         const submitButton = document.getElementById('submit-name');
