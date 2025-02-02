@@ -6,132 +6,48 @@
     <title>Day Special</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #ffe4e1;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            position: relative;
-            transition: background-color 1s ease;
-        }
-
-        #form-container, #main-content, #letter-page, #yay-screen, #red-screen {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            width: 80%;
-            margin: auto;
-            border-radius: 10px;
-        }
-
-        #form-container img {
-            width: 100px;
-        }
-
-        button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #yes-button {
-            background-color: #ffb6c1;
-            color: white;
-        }
-
-        #no-button {
-            background-color: #ffcccb;
-            color: white;
-            position: absolute;
-        }
-
-        #letter-page {
-            display: none;
-            background-color: #D8BFD8;
-            padding: 20px;
-        }
-
-        #yay-screen {
-            display: none;
-            background-color: pink;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        #yay-screen iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        #red-screen {
-            display: none;
-            background-color: red;
-            color: white;
-            padding: 20px;
-            height: 100vh;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        #back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: white;
-            color: red;
-            border-radius: 10px;
-            cursor: pointer;
-        }
+        /* Add all your existing CSS here */
     </style>
 </head>
 <body>
     <div id="form-container">
+        <img class="sticker-left" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Left">
+        <img class="sticker-right" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjVwb3hhYzM5M2Z5aDRzZDc3bnVrbW41M3Rrc3RxMHJ5NmYzNXpveSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YSAcNNgOzcdg6xgZYP/giphy.gif" alt="Sticker Right">
+        
         <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTFqemQ4bWVjbm8zc2d6Z3k0YjFrMHFjcm9rczE1Y25vb3RueTNkcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Cute animated illustration">
         <h1>hi</h1>
         
         <label for="name">Enter your name here:</label>
         <input type="text" id="name" placeholder="Your name here">
-        <button id="submit-name">Submit</button> 
-
-    <div id="main-content" style="display: none;">
-        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
-        <h2>Willst du mein Valentinstag sein?</h2>
-        <button id="yes-button">Ja</button>
-        <button id="no-button">Nein</button>
+        <button id="submit-name">Submit</button>
     </div>
 
     <div id="letter-page">
         <h1>Here's a secret message!</h1>
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzRidzAxNzkzbGFoa2FlcGlqYm5zbm10dmd3N2l1NTVzd2M2Mzh2ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/g3z4awKRKdD2lEMQaY/giphy.gif" alt="Cute animated illustration">
-        <button id="next-button">Open</button>
+        <button id="next-button">Next</button>
+    </div>
+
+    <div id="main-content">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXJpZGxoNG5sbXgzZjR1eThkMHp4eThsNHk4cW9lN293cXUxOTF1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/10a8AOSeP6Rqfu/giphy.gif" alt="Cute animated illustration">
+        <h2>Are you nice? ich hab mich in deinen augen verloren</h2>
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
     </div>
 
     <div id="yay-screen">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Xa-FQ3yAoOo?si=q40XADWyqhb5tMvz" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/watch?v=Xa-FQ3yAoOo" frameborder="0" allow="autoplay; loop" allowfullscreen></iframe>
         <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" alt="Cute animated illustration">
         <h1>ich mag dich so sehr </h1>
         <h1>bis zum mond und zurück. will dein ass. </h1>
     </div>
-        
+
     <div id="red-screen">
-        <h1>No fattie</h1>
         <h1>no fattie</h1>
         <div class="tenor-gif-embed" data-postid="13418513" data-share-method="host" data-aspect-ratio="1.5" data-width="100%"></div>
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-        <button id="back-button">Back</button>
     </div>
+
+    <button id="back-button" style="display: none;" onclick="goBack()">Back</button>
 
     <script>
         const submitButton = document.getElementById('submit-name');
@@ -140,52 +56,41 @@
         const mainContent = document.getElementById('main-content');
         const letterPage = document.getElementById('letter-page');
         const yayScreen = document.getElementById('yay-screen');
-        const nextButton = document.getElementById('next-button');
-        const yesButton = document.getElementById('yes-button');
-        const noButton = document.getElementById('no-button');
         const redScreen = document.getElementById('red-screen');
         const backButton = document.getElementById('back-button');
-
-        // Submit Name
+        const nextButton = document.getElementById('next-button'); // Added reference for next button
+        
         submitButton.addEventListener('click', () => {
             const name = nameInput.value.trim().toLowerCase();
             if (name === 'ryan' || name === 'muraa' || name === 'juwel') {
                 formContainer.style.display = 'none';
-                mainContent.style.display = 'block';
+                document.body.style.backgroundColor = '#D8BFD8'; // Change the background to Thistle
+                letterPage.style.display = 'block'; // Show the letter page
             } else {
-                // Fade to red screen
-                formContainer.style.display = 'none';
-                redScreen.style.display = 'block';
-                setTimeout(() => {
-                    redScreen.style.opacity = '1';
-                }, 100);
+                document.body.style.backgroundColor = 'red';
+                formContainer.style.display = 'none'; 
+                redScreen.style.display = 'block'; // Show the red screen
+                backButton.style.display = 'block'; // Show the back button
             }
         });
 
-        // Yes Button Click
-        yesButton.addEventListener('click', () => {
-            mainContent.style.display = 'none';
-            letterPage.style.display = 'block';
+        nextButton.addEventListener('click', () => { // Event listener for the Next button
+            letterPage.style.display = 'none'; // Hide the letter page
+            yayScreen.style.display = 'block'; // Show the yay screen
         });
 
-        // Open Letter Button Click
-        nextButton.addEventListener('click', () => {
-            letterPage.style.display = 'none';
-            yayScreen.style.display = 'block';
-        });
-
-        // No Button Moves Randomly
-        noButton.addEventListener('mouseover', () => {
-            const randomX = Math.random() * (window.innerWidth - 100);
-            const randomY = Math.random() * (window.innerHeight - 100);
-            noButton.style.left = `${randomX}px`;
-            noButton.style.top = `${randomY}px`;
-        });
         backButton.addEventListener('click', () => {
-            redScreen.style.display = 'none';
-            redScreen.style.opacity = '0';
-            formContainer.style.display = 'block';
+            document.body.style.backgroundColor = '#ffe4e1';
+            formContainer.style.display = 'block'; // Show the form again
+            redScreen.style.display = 'none'; // Hide the red screen
+            backButton.style.display = 'none'; // Hide the back button
         });
+
+        function goBack() {
+            document.body.style.backgroundColor = '#ffe4e1';
+            backButton.style.display = 'none'; // Hide the back button again
+            formContainer.style.display = 'block'; // Show the form
+        }
     </script>
 </body>
 </html>
